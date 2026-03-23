@@ -1,4 +1,3 @@
-// 前端f12拿到的请求负载示例
 {
     "scene_param": {
         "platform_source": 1,
@@ -18,9 +17,19 @@
         },
         "sort_type": 2
     },
+    "attribute_filter": [
+        {
+            "field": {
+                "field_name": "price_by_video_type__ge",
+                "rel_id": "2"
+            },
+            "field_value": "0"
+        }
+    ],
     "search_param": {
-        "seach_type": 2,
+        "seach_type": 3,
         "keyword": "桃黑黑",
-        "is_new_nickname_query": true
+        "time_range_days": 180,
+        "is_new_content_query": true
     }
 }

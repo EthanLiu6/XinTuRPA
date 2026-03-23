@@ -194,7 +194,7 @@ export async function fetchNextPages(context, cfg, firstRequest, firstResponse) 
   }
 
   const totalPages = cfg.maxPages;
-  console.log(`\n开始获取后续页面（目标 ${totalPages - 1} 页）...`);
+  console.log(`\n开始API翻页（目标 ${totalPages - 1} 页）...`);
   
   const seenIds = new Set();
   if (firstResponse?.authors) {
@@ -205,91 +205,32 @@ export async function fetchNextPages(context, cfg, firstRequest, firstResponse) 
     console.log(`第1页 ${firstResponse.authors.length} 条数据, 已记录 ${seenIds.size} 个唯一ID`);
   }
 
-  const page = context.pages()[0];
   const pages = [];
   let newAuthorsTotal = 0;
 
   for (let pageNum = 2; pageNum <= totalPages; pageNum++) {
-    console.log(`\n点击第 ${pageNum} 页按钮...`);
+    console.log(`\n请求第 ${pageNum} 页...`);
 
-    await page.waitForTimeout(1000);
-
-    let clicked = false;
-    const clickSelectors = [
-      'button:has-text("下一页")',
-      'button:has-text("下页")',
-      '[class*="next"]',
-      '[class*="pagination"] button:last-child',
-      '[aria-label="下一页"]',
-      'div[class*="pager"] button:last-child',
-      'div[class*="pagination"] button[class*="next"]'
-    ];
-
-    for (const sel of clickSelectors) {
-      try {
-        const btn = page.locator(sel).last();
-        if (await btn.count() > 0 && await btn.isVisible()) {
-          const isDisabled = await btn.getAttribute('disabled');
-          const ariaDisabled = await btn.getAttribute('aria-disabled');
-          if (isDisabled === null && ariaDisabled !== 'true') {
-            console.log(`  点击: ${sel}`);
-            await btn.click();
-            clicked = true;
-            break;
-          }
-        }
-      } catch (e) {
-        console.log(`  选择器 ${sel} 失败: ${e.message}`);
-      }
-    }
-
-    if (!clicked) {
-      console.log(`未找到可点击的下一页按钮，尝试滚动加载...`);
-      await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-      await page.waitForTimeout(2000);
-      
-      for (const sel of clickSelectors) {
-        try {
-          const btn = page.locator(sel).last();
-          if (await btn.count() > 0 && await btn.isVisible()) {
-            await btn.click();
-            clicked = true;
-            console.log(`  滚动后点击成功: ${sel}`);
-            break;
-          }
-        } catch {}
-      }
-    }
-
-    if (!clicked) {
-      console.log(`无法点击下一页按钮，尝试API翻页...`);
-      const apiResult = await tryApiFetch(context, cfg, firstRequest, firstResponse, pageNum);
-      if (apiResult.length > 0) {
-        pages.push(...apiResult);
-        newAuthorsTotal += apiResult.reduce((sum, p) => sum + (p.authors?.length || 0), 0);
-      }
-      continue;
-    }
-
-    await page.waitForTimeout(2000);
+    await new Promise(resolve => setTimeout(resolve, cfg.requestDelayMs || 2000));
 
     try {
-      const response = await page.waitForResponse(
-        (r) => r.url().includes(SEARCH_API_PATH) && r.status() === 200,
-        { timeout: 15000 }
-      );
-
-      const json = await response.json();
-      const rawAuthors = json?.authors || [];
-
-      const newAuthors = [];
-      for (const author of rawAuthors) {
-        const id = author.attribute_datas?.id || author.star_id || author.attribute_datas?.core_user_id;
-        if (!seenIds.has(id)) {
-          seenIds.add(id);
-          newAuthors.push(author);
-        }
+      const result = await fetchSinglePage(context, firstRequest, pageNum, cfg, seenIds);
+      
+      if (!result) {
+        console.log(`第 ${pageNum} 页请求失败，停止翻页`);
+        break;
       }
+
+      const json = result.json;
+      const rawAuthors = json?.authors || [];
+      const newAuthors = rawAuthors.filter(a => {
+        const id = a.attribute_datas?.id || a.star_id || a.attribute_datas?.core_user_id;
+        if (id && !seenIds.has(id)) {
+          seenIds.add(id);
+          return true;
+        }
+        return false;
+      });
 
       const respPage = json?.pagination?.page;
       const hasMore = Boolean(json?.pagination?.has_more);
@@ -297,8 +238,7 @@ export async function fetchNextPages(context, cfg, firstRequest, firstResponse) 
       console.log(`第 ${pageNum} 页响应: page=${respPage}, has_more=${hasMore}, raw=${rawAuthors.length}, new=${newAuthors.length}`);
 
       if (newAuthors.length > 0) {
-        const pageResult = { ...json, authors: newAuthors };
-        pages.push(pageResult);
+        pages.push({ ...json, authors: newAuthors });
         newAuthorsTotal += newAuthors.length;
       }
 
@@ -308,13 +248,51 @@ export async function fetchNextPages(context, cfg, firstRequest, firstResponse) 
       }
 
     } catch (e) {
-      console.warn(`第 ${pageNum} 页获取失败: ${e.message}`);
-      await page.waitForTimeout(3000);
+      console.warn(`第 ${pageNum} 页请求异常: ${e.message}`);
+      break;
     }
   }
 
   console.log(`\n翻页完成: 新增 ${pages.length} 页, 共 ${newAuthorsTotal} 条新数据`);
   return pages;
+}
+
+async function fetchSinglePage(context, firstRequest, pageNum, cfg, seenIds) {
+  let requestBody = null;
+  try {
+    requestBody = firstRequest.postData ? JSON.parse(firstRequest.postData) : null;
+  } catch {
+    return null;
+  }
+
+  if (!requestBody) return null;
+
+  const nextBody = buildNextPageBody(requestBody, pageNum, cfg.pageSize, null);
+  const postData = JSON.stringify(nextBody);
+
+  const baseHeaders = { ...firstRequest.headers };
+  delete baseHeaders["content-length"];
+  delete baseHeaders["host"];
+  delete baseHeaders["Content-Length"];
+
+  try {
+    const resp = await context.request.fetch(firstRequest.url, {
+      method: firstRequest.method || "POST",
+      headers: baseHeaders,
+      data: postData
+    });
+
+    if (!resp.ok()) {
+      console.warn(`  API请求失败: HTTP ${resp.status()}`);
+      return null;
+    }
+
+    const json = await resp.json();
+    return { json };
+  } catch (e) {
+    console.warn(`  请求异常: ${e.message}`);
+    return null;
+  }
 }
 
 async function tryApiFetch(context, cfg, firstRequest, firstResponse, startPage) {
@@ -422,6 +400,8 @@ function buildNextPageBody(requestBody, pageNum, pageSize, searchSessionId) {
 
   if (searchSessionId) {
     next.search_session_id = searchSessionId;
+  } else {
+    delete next.search_session_id;
   }
 
   return next;

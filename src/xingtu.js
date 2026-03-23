@@ -166,6 +166,8 @@ export async function fetchMorePages({ context, cfg, getLastSearchRequest, first
       }
       if (searchSessionId) {
         next.search_session_id = searchSessionId;
+      } else {
+        delete next.search_session_id;
       }
       postData = JSON.stringify(next);
     }

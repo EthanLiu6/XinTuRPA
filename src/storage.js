@@ -4,6 +4,29 @@ import process from "node:process";
 import { ensureDir, writeJson } from "./fs-util.js";
 import { getSummary, getCsvHeaders, authorToCsvRow } from "./parser.js";
 
+let XLSX = null;
+try {
+  XLSX = require("xlsx");
+} catch {}
+
+// 居中样式
+const centerStyle = {
+  alignment: { horizontal: "center", vertical: "center" },
+  font: { name: "Arial", sz: 10 },
+  border: {
+    top: { style: "thin", color: { rgb: "D3D3D3" } },
+    bottom: { style: "thin", color: { rgb: "D3D3D3" } },
+    left: { style: "thin", color: { rgb: "D3D3D3" } },
+    right: { style: "thin", color: { rgb: "D3D3D3" } }
+  }
+};
+
+const headerStyle = {
+  ...centerStyle,
+  font: { name: "Arial", sz: 10, bold: true },
+  fill: { fgColor: { rgb: "E8E8E8" } }
+};
+
 export function saveAuthors(authors, cfg, searchInfo) {
   const outDir = path.resolve(process.cwd(), cfg.outputDir);
   ensureDir(outDir);
@@ -46,12 +69,37 @@ export function saveCsvFile(filePath, authors) {
   const headers = getCsvHeaders();
   const rows = authors.map(author => authorToCsvRow(author));
 
+  // 保存 CSV
   const csvContent = [
     headers.join(","),
     ...rows.map(row => row.map(cell => escapeCsvCell(String(cell))).join(","))
   ].join("\n");
 
   fs.writeFileSync(filePath, "\uFEFF" + csvContent, "utf8");
+
+  // 保存 Excel
+  if (XLSX) {
+    const xlsxPath = filePath.replace(/\.csv$/, ".xlsx");
+    const wb = XLSX.utils.book_new();
+    const ws = XLSX.utils.aoa_to_sheet([headers, ...rows]);
+
+    // 设置列宽
+    const colWidths = headers.map(() => ({ wch: 15 }));
+    ws["!cols"] = colWidths;
+
+    // 应用居中样式
+    const range = XLSX.utils.decode_range(ws["!ref"]);
+    for (let R = range.s.r; R <= range.e.r; R++) {
+      for (let C = range.s.c; C <= range.e.c; C++) {
+        const addr = XLSX.utils.encode_cell({ r: R, c: C });
+        if (!ws[addr]) continue;
+        ws[addr].s = R === 0 ? headerStyle : centerStyle;
+      }
+    }
+
+    XLSX.utils.book_append_sheet(wb, ws, "达人数据");
+    XLSX.writeFile(wb, xlsxPath);
+  }
 }
 
 function escapeCsvCell(cell) {
@@ -129,6 +177,27 @@ export function saveBatchResults(results, cfg) {
 
   const csvFilePath = path.join(outDir, `xingtu-batch-${timestamp}.csv`);
   fs.writeFileSync(csvFilePath, "\uFEFF" + allCsvRows.join("\n"), "utf8");
+
+  if (XLSX) {
+    const xlsxPath = path.join(outDir, `xingtu-batch-${timestamp}.xlsx`);
+    const wb = XLSX.utils.book_new();
+    const ws = XLSX.utils.aoa_to_sheet(allCsvRows);
+
+    const colWidths = getCsvHeaders().map(() => ({ wch: 15 }));
+    ws["!cols"] = colWidths;
+
+    const range = XLSX.utils.decode_range(ws["!ref"]);
+    for (let R = range.s.r; R <= range.e.r; R++) {
+      for (let C = range.s.c; C <= range.e.c; C++) {
+        const addr = XLSX.utils.encode_cell({ r: R, c: C });
+        if (!ws[addr]) continue;
+        ws[addr].s = R === 0 ? headerStyle : centerStyle;
+      }
+    }
+
+    XLSX.utils.book_append_sheet(wb, ws, "达人数据");
+    XLSX.writeFile(wb, xlsxPath);
+  }
 
   console.log(`\n批量数据导出完成:`);
   console.log(`  JSON: ${jsonFilePath}`);

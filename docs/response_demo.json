@@ -1,160 +1,173 @@
-// 省略了中间18个author，只保留了第一个和最后一个
 {
     "authors": [
         {
             "attribute_datas": {
-                "assign_cpm_suggest_price": "24",
-                "assign_task_price_list": "[50000,80000,240000]",
+                "assign_cpm_suggest_price": "52",
+                "assign_task_price_list": "[300000,900000,1000000]",
                 "author_avatar_frame_icon": "20",
-                "author_ecom_level": "L6",
+                "author_ecom_level": "L0",
                 "author_level_game": "Lv1",
                 "author_level_other": "Lv1",
                 "author_status": "1",
-                "author_thin_mid_word_association_index": "{\"健身\":54.448686322760096,\"年轻人\":5.471499999999972,\"异地恋\":0.552,\"早餐\":6.058,\"绵密\":1.0350000000000001,\"蛋白质\":5.636123059238056,\"防水\":0.8840000000000003}",
+                "author_thin_mid_word_association_index": "{\"健身\":0.502,\"军训\":9.194999999999872,\"清爽\":5.66999999999999,\"玻色因\":8.179499999999969,\"美白\":4.219399999999997,\"聚会\":3.535000000000001,\"遮瑕\":7.065000000000001,\"酥脆\":48.965999999999894,\"防晒\":23.458166506542117,\"防水\":13.27349999999996}",
                 "author_type": "2",
-                "avatar_uri": "https://p26.douyinpic.com/aweme/1080x1080/aweme-avatar/tos-cn-avt-0015_07bca090453529120b9c9e2f814d7ab5.jpeg?from=3782654143",
-                "avg_sale_amount_range": "1000-5000",
-                "avg_search_after_view_rate_30d": "0.001",
+                "avatar_uri": "https://p3.douyinpic.com/aweme/1080x1080/aweme-avatar/tos-cn-avt-0015_78e350557156cbd5e2598027b51691e4.jpeg?from=3782654143",
+                "avg_search_after_view_rate_30d": "0.0039",
                 "brand_boost_vv": "0",
-                "burst_text_rate": "0.75",
-                "city": "上海",
-                "content_theme_labels_180d": "[\"搞笑挑战\",\"美食挑战\",\"豪车展示\",\"搞笑剧情\",\"户外钓鱼\",\"美食吃播\",\"荤菜教程\",\"海外旅行\",\"相亲探讨\",\"垂钓之旅\"]",
-                "core_user_id": "3703570636486996",
+                "burst_text_rate": "1",
+                "city": "",
+                "content_theme_labels_180d": "[\"搞笑剧情\",\"减脂美食\",\"零食测评\",\"AI应用\",\"消费体验\",\"电动车资讯\",\"美食吃播\",\"科技资讯\",\"美食趣闻\",\"有趣剧情创作\"]",
+                "core_user_id": "70166295960",
                 "e_commerce_enable": "1",
-                "ecom_avg_order_value_30d_range": "50-200",
-                "ecom_gmv_30d_range": "\u003e100w",
-                "ecom_gpm_30d_range": "\u003c=80",
-                "ecom_gpm_30days_range": "5以下",
-                "ecom_score": "74",
-                "ecom_video_ctr_30d_range": "4%-6%",
-                "ecom_video_mid_click_pv_30d_range": "500以下",
-                "ecom_video_product_num_30d": "2",
-                "ecom_watch_pv_30d": "1.1",
+                "ecom_video_product_num_30d": "0",
                 "expected_cpa3_level": "4",
-                "expected_natural_play_num": "3361698",
-                "expected_play_num": "3919982",
-                "fans_increment_rate_within_15d": "0.012356257311739623",
-                "fans_increment_within_15d": "75550",
-                "fans_increment_within_30d": "2293717.11",
-                "follower": "6189325",
-                "game_type": "",
-                "gender": "0",
+                "expected_natural_play_num": "33217619",
+                "expected_play_num": "35886388",
+                "fans_increment_rate_within_15d": "0.003925028757395875",
+                "fans_increment_within_15d": "45232",
+                "fans_increment_within_30d": "335626",
+                "follower": "11567090",
+                "game_type": "{\"MOBA\": 1.0}",
+                "gender": "1",
                 "grade": "0",
-                "id": "7029342444797820939",
-                "interact_rate_within_30d": "0.0143",
-                "interaction_median_30d": "76268",
+                "id": "6965070996495663112",
+                "interact_rate_within_30d": "0.0869",
+                "interaction_median_30d": "4337533",
                 "is_ad_star_cur_high_quality_author": "0",
                 "is_black_horse_author": "false",
                 "is_cocreate_author": "true",
-                "is_cpm_project_author": "1",
+                "is_cpm_project_author": "0",
                 "is_excellenct_author": "0",
                 "is_short_drama": "0",
-                "last_10_items": "[{\"comment_cnt\":\"730\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1773833477\",\"item_id\":\"7618556745526431010\",\"item_publish_time\":\"1773833477\",\"item_title\":\"百日报名女生正式开启  #百人百日百万  #百日彭于晏  #华哥带你练\",\"like_cnt\":\"3141\",\"share_cnt\":\"1943\",\"vv\":\"347096\"},{\"comment_cnt\":\"4773\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1773643217\",\"item_id\":\"7617739576362290472\",\"item_publish_time\":\"1773653400\",\"item_title\":\"迪拜俯卧撑挑战，看看外国人身体水平怎么样？#俯卧撑 #百人百日百万  #百日彭于晏  #华哥带你练\",\"like_cnt\":\"56430\",\"share_cnt\":\"5217\",\"vv\":\"4054996\"},{\"comment_cnt\":\"904\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1773467856\",\"item_id\":\"7616986418551737640\",\"item_publish_time\":\"1773567001\",\"item_title\":\"来看看老外如何评价中国的健美选手#迪拜 #健身房 #百人百日百万  #百日彭于晏  #华哥带你练\",\"like_cnt\":\"13042\",\"share_cnt\":\"475\",\"vv\":\"1132255\"},{\"comment_cnt\":\"10864\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1773470809\",\"item_id\":\"7616999103695834383\",\"item_publish_time\":\"1773480600\",\"item_title\":\"100公斤哑铃来到了迪拜，看一下中东的力量水平如何 #100公斤哑铃挑战 #百人百日百万 #华哥带你练 #百日彭于晏\",\"like_cnt\":\"179750\",\"share_cnt\":\"13253\",\"vv\":\"11856845\"},{\"comment_cnt\":\"1523\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1773299897\",\"item_id\":\"7616265035853221160\",\"item_publish_time\":\"1773394214\",\"item_title\":\"挑战pk中东顶级的健身选手，看看同是四旬老汉谁更猛！#foyes增肌粉  #健身  #FoYes数智工厂\",\"like_cnt\":\"56563\",\"share_cnt\":\"1272\",\"vv\":\"3596066\"},{\"comment_cnt\":\"12783\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1773315453\",\"item_id\":\"7616331814365449512\",\"item_publish_time\":\"1773315453\",\"item_title\":\"不能让阴柔之风成为我们的主流，我在上海等你来战 #百人百日百万  #百日彭于晏  #华哥带你练\",\"like_cnt\":\"51266\",\"share_cnt\":\"14292\",\"vv\":\"5943618\"},{\"comment_cnt\":\"4357\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1773227235\",\"item_id\":\"7615952902930189568\",\"item_publish_time\":\"1773227235\",\"item_title\":\"看完了几千个报名的选手，内心有很多感想 #百人百日百万 #百日彭于晏 #华哥带你练\",\"like_cnt\":\"14547\",\"share_cnt\":\"2349\",\"vv\":\"1843113\"},{\"comment_cnt\":\"1813\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1772618570\",\"item_id\":\"7613338722121125160\",\"item_publish_time\":\"1773048646\",\"item_title\":\"花3000块钱，和迪拜的健身教练上一节课，看看到底值不值#迪拜  #健身  #私教一对一\",\"like_cnt\":\"23625\",\"share_cnt\":\"1564\",\"vv\":\"2993844\"},{\"comment_cnt\":\"65008\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1772965303\",\"item_id\":\"7614827897844550927\",\"item_publish_time\":\"1772965303\",\"item_title\":\"百日报名正式开启#华哥带你练 #百人百日百万#百日彭于晏\",\"like_cnt\":\"152978\",\"share_cnt\":\"68312\",\"vv\":\"12688022\"},{\"comment_cnt\":\"11348\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1772870140\",\"item_id\":\"7614419230917725440\",\"item_publish_time\":\"1772870140\",\"item_title\":\"迪拜机场现状，保持好心态#迪拜 #百日彭于晏#华哥带你练  #百人百日百万\",\"like_cnt\":\"137578\",\"share_cnt\":\"10198\",\"vv\":\"10560226\"}]",
-                "link_convert_index": "91.64",
-                "link_convert_index_by_industry": "92.71",
-                "link_i_cnt_by_industry": "26484116",
-                "link_k_cnt_by_industry": "23009",
-                "link_l_cnt_by_industry": "26578420",
-                "link_link_cnt_by_industry": "59361448",
-                "link_n_cnt_by_industry": "6275903",
-                "link_recommend_index_by_industry": "86.99",
-                "link_shopping_index": "92.5",
-                "link_spread_index": "95.56",
-                "link_spread_index_by_industry": "91.73",
-                "link_star_index": "88.1",
-                "link_star_index_by_industry": "88.25",
-                "link_user_type_by_industry": "1",
+                "last_10_items": "[{\"comment_cnt\":\"282433\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1773801044\",\"item_id\":\"7618417451201580322\",\"item_publish_time\":\"1773801044\",\"item_title\":\"卖掉家里的资产后，正式进军穿搭界#桃黑黑\",\"like_cnt\":\"1544253\",\"share_cnt\":\"1164053\",\"vv\":\"18351277\"},{\"comment_cnt\":\"244853\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1772367131\",\"item_id\":\"7612258526605446406\",\"item_publish_time\":\"1772367131\",\"item_title\":\"谁懂学校食堂的救赎感#桃黑黑 #2026年味加码 #华味坊酸汤面叶 #华味坊\",\"like_cnt\":\"2840037\",\"share_cnt\":\"3448972\",\"vv\":\"42288720\"},{\"comment_cnt\":\"659794\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1770976892\",\"item_id\":\"7606287632242461958\",\"item_publish_time\":\"1770976892\",\"item_title\":\"史上最雷霆的投喂来了#桃黑黑  #卫龙 #魔芋爽晒出你的爽\",\"like_cnt\":\"3342445\",\"share_cnt\":\"1946855\",\"vv\":\"63704402\"},{\"comment_cnt\":\"91946\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1769149079\",\"item_id\":\"7598437374321888548\",\"item_publish_time\":\"1769149079\",\"item_title\":\"满小饱钦定的雷霆小尬剧，来了！#桃黑黑 #满小饱\",\"like_cnt\":\"929814\",\"share_cnt\":\"607544\",\"vv\":\"14786256\"},{\"comment_cnt\":\"83780\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1768712830\",\"item_id\":\"7596563679496129833\",\"item_publish_time\":\"1768712830\",\"item_title\":\"收到了有史以来最离谱的电动车一台#肯德基周末疯狂拼  #肯德基周末疯狂拼联名台铃 #肯德基电动车  #台铃\",\"like_cnt\":\"3122609\",\"share_cnt\":\"3905977\",\"vv\":\"42789264\"},{\"comment_cnt\":\"142399\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1766121192\",\"item_id\":\"7585432635288194346\",\"item_publish_time\":\"1766121192\",\"item_title\":\"2025年美团会员年度报告，来了。#桃黑黑 #美团会员  #2025美团会员年度账单  #美团\",\"like_cnt\":\"3515774\",\"share_cnt\":\"4624607\",\"vv\":\"68493304\"},{\"comment_cnt\":\"45810\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1763560645\",\"item_id\":\"7574435225283890438\",\"item_publish_time\":\"1763560645\",\"item_title\":\"居然有品牌愿意花钱听我唱歌？#桃黑黑  #奥利奥利奥利卷 #奥利奥利奥利卷就卷你玩  #盒马新品  #盒马烘焙\",\"like_cnt\":\"1465588\",\"share_cnt\":\"998840\",\"vv\":\"26749905\"},{\"comment_cnt\":\"54520\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1761365610\",\"item_id\":\"7565007657766030643\",\"item_publish_time\":\"1761365610\",\"item_title\":\"烹鸡大师和阿鸡兽的超级合作！#桃黑黑  #肯德基全鸡  #肯德基香焗纸包鸡  #全鸡还吃肯德基 #肯德基新品\",\"like_cnt\":\"1402882\",\"share_cnt\":\"1105018\",\"vv\":\"24987328\"},{\"comment_cnt\":\"333230\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1760374681\",\"item_id\":\"7560751618711457062\",\"item_publish_time\":\"1760374681\",\"item_title\":\"新鲜出炉的北京游记#桃黑黑 #NARS超方瓶 #古风浪客\",\"like_cnt\":\"1894494\",\"share_cnt\":\"1460519\",\"vv\":\"32070550\"},{\"comment_cnt\":\"206854\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1757448787\",\"item_id\":\"7548184807461637427\",\"item_publish_time\":\"1757448787\",\"item_title\":\"看到最后有主播要宣布的重大事件#桃黑黑 #国草 #全国校园男神大赛\",\"like_cnt\":\"4826291\",\"share_cnt\":\"5547936\",\"vv\":\"72449007\"}]",
+                "link_convert_index": "71.78",
+                "link_convert_index_by_industry": "71.78",
+                "link_i_cnt_by_industry": "7767577",
+                "link_k_cnt_by_industry": "0",
+                "link_l_cnt_by_industry": "15420620",
+                "link_link_cnt_by_industry": "35239081",
+                "link_n_cnt_by_industry": "12050884",
+                "link_recommend_index_by_industry": "77.58",
+                "link_shopping_index": "77.58",
+                "link_spread_index": "88.16",
+                "link_spread_index_by_industry": "88.16",
+                "link_star_index": "76.97",
+                "link_star_index_by_industry": "76.97",
+                "link_user_type_by_industry": "2",
                 "local_lower_threshold_author": "false",
-                "nick_name": "健身华哥",
-                "pic_expected_play_num": "17462",
-                "play_over_rate_within_30d": "0.2486",
-                "playlet_author_types": "[3]",
-                "price_1_20": "80000",
-                "price_20_60": "200000",
-                "price_60": "300000",
-                "prospective_1_20_cpm": "20.4083",
-                "prospective_20_60_cpm": "51.0206",
-                "prospective_60_cpm": "76.531",
-                "province": "",
-                "search_after_view_index_by_industry": "96.96",
-                "sn_expected_play_num": "3919982",
-                "sn_interact_rate_within_30d": "0.0143",
-                "sn_play_over_rate_within_30d": "0.2486",
-                "sn_prospective_1_20_cpe": "1.5399",
-                "sn_prospective_1_20_cpm": "20.4083",
-                "sn_prospective_20_60_cpe": "3.8497",
-                "sn_prospective_20_60_cpm": "51.0206",
-                "sn_prospective_60_cpe": "5.7746",
-                "sn_prospective_60_cpm": "76.531",
-                "star_ecom_main_price_30days": "493.5",
+                "nick_name": "桃黑黑（旅游中）",
+                "play_over_rate_within_30d": "0.0844",
+                "price_1_20": "400000",
+                "price_20_60": "1000000",
+                "price_60": "1200000",
+                "promotion_prospective_1_20_cpm": "11.34",
+                "promotion_prospective_20_60_cpm": "28.36",
+                "promotion_prospective_60_cpm": "34.03",
+                "promotion_prospective_vv": "35263420",
+                "prospective_1_20_cpm": "11.1463",
+                "prospective_20_60_cpm": "27.8657",
+                "prospective_60_cpm": "33.4389",
+                "province": "上海市",
+                "search_after_view_index_by_industry": "92.22",
+                "sn_expected_play_num": "35886388",
+                "sn_interact_rate_within_30d": "0.0869",
+                "sn_play_over_rate_within_30d": "0.0844",
+                "sn_prospective_1_20_cpe": "0.1409",
+                "sn_prospective_1_20_cpm": "11.1463",
+                "sn_prospective_20_60_cpe": "0.3522",
+                "sn_prospective_20_60_cpm": "27.8657",
+                "sn_prospective_60_cpe": "0.4226",
+                "sn_prospective_60_cpm": "33.4389",
                 "star_ecom_video_num_30d": "2",
-                "star_ecom_video_product_num_30d": "2",
                 "star_excellent_author": "0",
-                "star_index": "84.7348344931917",
+                "star_index": "68.86123107881349",
                 "star_item_count_within_30d": "2",
                 "star_qianchuan_high_potential": "0",
                 "star_whispers_author": "0",
-                "tags_relation": "{\"三农\":[\"三农\"]}",
-                "vv_median_30d": "5151193.5"
+                "tags_relation": "{\"测评\":[\"综合测评\"]}",
+                "vv_median_30d": "27250122"
             },
             "extra_data": {
-                "content_query_from_word": "",
-                "content_query_score": 0,
-                "debug_info": "",
+                "content_query_from_word": "桃黑黑",
+                "content_query_score": 103.74237424670477,
+                "debug_info": "{\"最终评分\":103.74237424670477,\"相关性评分\":67.7876770795608,\"达人自定义评分\":0.001647085,\"达人自定义评分系数\":1.0011368536872496,\"达人质量评分\":88.16,\"达人质量评分系数\":1.528663803489695}",
                 "demander_behavior": {
                     "added_author_list": false,
                     "cooperated": false,
                     "viewd_author_page": false
                 },
                 "recall_from": [
-                    "1_0"
+                    "9_0"
                 ],
                 "recall_return_infos": {},
                 "recommend_types": []
             },
             "items": [
                 {
-                    "item_id": "7585509264798584091",
-                    "video_tag": 3,
-                    "vv": 28187598
+                    "debug_info": "{\"ES评分\":130.2147,\"itemId\":\"7598437374321888548\",\"viking评分\":0.41238993406295776,\"是否星图视频系数\":1.1,\"线性化ES评分\":53.09859946920683,\"视频新鲜度系数\":1,\"视频最终评分\":76.79847281944666,\"视频相关性评分\":48.35475704404241,\"视频质量系数\":1.4438453988846187,\"视频质量评分\":100}",
+                    "item_id": "7598437374321888548",
+                    "products": [],
+                    "score": 76.79847281944666,
+                    "video_tag": 1
                 },
                 {
-                    "item_id": "7612627265230294324",
-                    "video_tag": 3,
-                    "vv": 24739779
+                    "debug_info": "{\"ES评分\":126.226204,\"itemId\":\"7618417451201580322\",\"viking评分\":0,\"是否星图视频系数\":1.1,\"线性化ES评分\":51.472181318348795,\"视频新鲜度系数\":1,\"视频最终评分\":81.74965938375801,\"视频相关性评分\":51.472181318348795,\"视频质量系数\":1.4438453988846187,\"视频质量评分\":100}",
+                    "item_id": "7618417451201580322",
+                    "products": [],
+                    "score": 81.74965938375801,
+                    "video_tag": 1
                 },
                 {
-                    "item_id": "7579906176666717474",
-                    "video_tag": 4,
-                    "vv": 27587292
+                    "debug_info": "{\"ES评分\":122.68225,\"itemId\":\"7606287632242461958\",\"viking评分\":0.11682933568954468,\"是否星图视频系数\":1.1,\"线性化ES评分\":50.02703730631871,\"视频新鲜度系数\":1,\"视频最终评分\":55.09473698557212,\"视频相关性评分\":34.68939581137301,\"视频质量系数\":1.4438453988846187,\"视频质量评分\":100}",
+                    "item_id": "7606287632242461958",
+                    "products": [],
+                    "score": 55.09473698557212,
+                    "video_tag": 1
                 },
                 {
-                    "item_id": "7605502028357389620",
-                    "video_tag": 4,
-                    "vv": 22628198
+                    "debug_info": "{\"ES评分\":119.67676,\"itemId\":\"7560751618711457062\",\"viking评分\":0.3017849922180176,\"是否星图视频系数\":1.1,\"线性化ES评分\":48.80146669317975,\"视频新鲜度系数\":1,\"视频最终评分\":65.67692866340951,\"视频相关性评分\":41.35227970462855,\"视频质量系数\":1.4438453988846187,\"视频质量评分\":100}",
+                    "item_id": "7560751618711457062",
+                    "products": [],
+                    "score": 65.67692866340951,
+                    "video_tag": 1
                 },
                 {
-                    "item_id": "7564676046956678440",
-                    "video_tag": 5,
-                    "vv": 20903445
+                    "debug_info": "{\"ES评分\":108.538734,\"itemId\":\"7612258526605446406\",\"viking评分\":0.20897388458251953,\"是否星图视频系数\":1.1,\"线性化ES评分\":44.259632465157786,\"视频新鲜度系数\":1,\"视频最终评分\":55.45262721278067,\"视频相关性评分\":34.91473486239545,\"视频质量系数\":1.4438453988846187,\"视频质量评分\":100}",
+                    "item_id": "7612258526605446406",
+                    "products": [],
+                    "score": 55.45262721278067,
+                    "video_tag": 1
                 },
                 {
-                    "item_id": "7555783474376985891",
-                    "video_tag": 5,
-                    "vv": 19804007
+                    "debug_info": "{\"ES评分\":101.64487,\"itemId\":\"7585432635288194346\",\"viking评分\":0.2271673083305359,\"是否星图视频系数\":1.1,\"线性化ES评分\":41.448471180516464,\"视频新鲜度系数\":1,\"视频最终评分\":53.92957851520378,\"视频相关性评分\":33.95577504153131,\"视频质量系数\":1.4438453988846187,\"视频质量评分\":100}",
+                    "item_id": "7585432635288194346",
+                    "products": [],
+                    "score": 53.92957851520378,
+                    "video_tag": 1
                 },
                 {
-                    "item_id": "7618556745526431010",
-                    "video_tag": 6,
-                    "vv": 287584
+                    "debug_info": "{\"ES评分\":101.151,\"itemId\":\"7565007657766030643\",\"viking评分\":0.2247210144996643,\"是否星图视频系数\":1.1,\"线性化ES评分\":41.24708220277542,\"视频新鲜度系数\":1,\"视频最终评分\":53.58225622888239,\"视频相关性评分\":33.73708990165182,\"视频质量系数\":1.4438453988846187,\"视频质量评分\":100}",
+                    "item_id": "7565007657766030643",
+                    "products": [],
+                    "score": 53.58225622888239,
+                    "video_tag": 1
                 },
                 {
-                    "item_id": "7617739576362290472",
-                    "video_tag": 6,
-                    "vv": 3608850
+                    "debug_info": "{\"ES评分\":99.2341,\"itemId\":\"7574435225283890438\",\"viking评分\":0.3496500253677368,\"是否星图视频系数\":1.1,\"线性化ES评分\":40.465413886352444,\"视频新鲜度系数\":1,\"视频最终评分\":60.77401462676161,\"视频相关性评分\":38.26524934652094,\"视频质量系数\":1.4438453988846187,\"视频质量评分\":100}",
+                    "item_id": "7574435225283890438",
+                    "products": [],
+                    "score": 60.77401462676161,
+                    "video_tag": 1
+                },
+                {
+                    "debug_info": "{\"ES评分\":30.02256,\"itemId\":\"7596563679496129833\",\"viking评分\":0.021799087524414062,\"是否星图视频系数\":1.1,\"线性化ES评分\":12.24251861333805,\"视频新鲜度系数\":1,\"视频最终评分\":13.051239290382481,\"视频相关性评分\":8.217474668979392,\"视频质量系数\":1.4438453988846187,\"视频质量评分\":100}",
+                    "item_id": "7596563679496129833",
+                    "products": [],
+                    "score": 13.051239290382481,
+                    "video_tag": 1
                 }
             ],
-            "star_id": "7029342444797820939",
+            "star_id": "6965070996495663112",
             "task_infos": [
                 {
                     "online_status": 1,
@@ -163,19 +176,9 @@
                         {
                             "end_time": "2145916800",
                             "platform_source": 1,
-                            "price": 70000,
+                            "price": 60000,
                             "price_extra_info": {},
-                            "start_time": "1672502400",
-                            "task_category": 1,
-                            "video_type": 90,
-                            "video_type_status": 1
-                        },
-                        {
-                            "end_time": "2145916800",
-                            "platform_source": 1,
-                            "price": 28000,
-                            "price_extra_info": {},
-                            "start_time": "1672502400",
+                            "start_time": "1664553600",
                             "task_category": 1,
                             "video_type": 91,
                             "video_type_status": 1
@@ -183,9 +186,9 @@
                         {
                             "end_time": "2145916800",
                             "platform_source": 1,
-                            "price": 80000,
+                            "price": 400000,
                             "price_extra_info": {},
-                            "start_time": "1769411726",
+                            "start_time": "1767668823",
                             "task_category": 1,
                             "video_type": 1,
                             "video_type_status": 1
@@ -193,12 +196,12 @@
                         {
                             "end_time": "2145916800",
                             "platform_source": 1,
-                            "price": 18,
+                            "price": 61,
                             "price_extra_info": {
-                                "ceiling_price": "140000",
-                                "floor_price": "14000"
+                                "ceiling_price": "195000",
+                                "floor_price": "26000"
                             },
-                            "start_time": "1714990091",
+                            "start_time": "1699620805",
                             "task_category": 1,
                             "video_type": 92,
                             "video_type_status": 1
@@ -206,9 +209,9 @@
                         {
                             "end_time": "2145916800",
                             "platform_source": 1,
-                            "price": 300000,
+                            "price": 1200000,
                             "price_extra_info": {},
-                            "start_time": "1769411726",
+                            "start_time": "1767668823",
                             "task_category": 1,
                             "video_type": 71,
                             "video_type_status": 1
@@ -216,21 +219,11 @@
                         {
                             "end_time": "2145916800",
                             "platform_source": 1,
-                            "price": 200000,
+                            "price": 1000000,
                             "price_extra_info": {},
-                            "start_time": "1769411726",
+                            "start_time": "1767668823",
                             "task_category": 1,
                             "video_type": 2,
-                            "video_type_status": 1
-                        },
-                        {
-                            "end_time": "2145916800",
-                            "platform_source": 1,
-                            "price": 400000,
-                            "price_extra_info": {},
-                            "start_time": "1769411726",
-                            "task_category": 1,
-                            "video_type": 150,
                             "video_type_status": 1
                         }
                     ],
@@ -241,121 +234,158 @@
         },
         {
             "attribute_datas": {
-                "assign_cpm_suggest_price": "27",
+                "assign_cpm_suggest_price": "17",
+                "assign_task_price_list": "[17600]",
                 "author_avatar_frame_icon": "0",
-                "author_ecom_level": "L1",
+                "author_ecom_level": "L0",
                 "author_level_game": "Lv1",
                 "author_level_other": "Lv1",
                 "author_status": "1",
-                "author_thin_mid_word_association_index": "{\"健身\":0.0003333333333333333,\"清爽\":0,\"蛋白质\":0}",
-                "author_type": "1",
-                "avatar_uri": "https://p11.douyinpic.com/aweme/1080x1080/aweme-avatar/tos-cn-avt-0015_b8b3ed7972241bd1927cb80d37a9e2ff.jpeg?from=3782654143",
-                "brand_boost_vv": "0",
-                "city": "",
-                "content_theme_labels_180d": "[\"健身增肌\",\"力量训练\",\"健康饮食\",\"零食测评\",\"饮品制作\",\"减脂美食\",\"体重管理\"]",
-                "core_user_id": "100083219487",
+                "author_thin_mid_word_association_index": "{\"清爽\":0.012}",
+                "author_type": "2",
+                "avatar_uri": "https://p11.douyinpic.com/aweme/1080x1080/aweme-avatar/tos-cn-i-0813_ocAA7IAqH5oASJVvwkiPCixA9A1BLgeCYEfD2G.jpeg?from=3782654143",
+                "city": "北京",
+                "content_theme_labels_180d": "[\"秋冬穿搭\",\"自制美食\",\"地方美食\",\"水果测评\",\"第五人格角色\",\"美食趣闻\",\"保暖穿搭\",\"美食挑战\",\"手机市场资讯\",\"海鲜美食\"]",
+                "core_user_id": "75969200133",
                 "e_commerce_enable": "1",
-                "ecom_score": "78",
-                "ecom_video_ctr_30d_range": "2%-4%",
-                "ecom_video_mid_click_pv_30d_range": "500以下",
-                "ecom_video_product_num_30d": "10",
-                "expected_natural_play_num": "385",
-                "expected_play_num": "422",
-                "fans_increment_rate_within_15d": "-0.0020669904550132696",
-                "fans_increment_within_15d": "-1201",
-                "fans_increment_within_30d": "-2454",
-                "follower": "579817",
-                "game_type": "{\"\\u5c04\\u51fb\": 1.0}",
-                "gender": "1",
+                "ecom_video_product_num_30d": "0",
+                "expected_cpa3_level": "3",
+                "expected_natural_play_num": "70312",
+                "expected_play_num": "66491",
+                "fans_increment_rate_within_15d": "-0.0017497611306254597",
+                "fans_increment_within_15d": "-5091",
+                "fans_increment_within_30d": "-10482",
+                "follower": "2904823",
+                "game_type": "",
+                "gender": "2",
                 "grade": "0",
-                "id": "6629656325343150084",
-                "interact_rate_within_30d": "0.0049",
-                "interaction_median_30d": "8.5",
+                "id": "7506103213171408907",
+                "interact_rate_within_30d": "0.0678",
+                "interaction_median_30d": "7076",
                 "is_ad_star_cur_high_quality_author": "0",
                 "is_black_horse_author": "false",
                 "is_cocreate_author": "false",
                 "is_cpm_project_author": "0",
                 "is_excellenct_author": "0",
-                "is_short_drama": "0",
-                "last_10_items": "[{\"comment_cnt\":\"0\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1773728794\",\"item_id\":\"7618107139202075954\",\"item_publish_time\":\"1773803940\",\"item_title\":\"要是早点发现它，也不用受那么多苦了 #Hot增肌粉 #健身 #补剂 #自律\",\"like_cnt\":\"0\",\"share_cnt\":\"0\",\"vv\":\"94\"},{\"comment_cnt\":\"0\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1773727785\",\"item_id\":\"7618102796956585256\",\"item_publish_time\":\"1773800160\",\"item_title\":\"不愧是A类补给，后悔没早点知道它！ #运动  #健身  #康比特肌酸\",\"like_cnt\":\"0\",\"share_cnt\":\"0\",\"vv\":\"117\"},{\"comment_cnt\":\"1\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1773372774\",\"item_id\":\"7616578050855013683\",\"item_publish_time\":\"1773372774\",\"item_title\":\"hot蛋白粉，六重蛋白矩阵，不会让你失望 #Hot六重蛋白粉 #蛋白粉 #补剂 #健身 #强烈推荐#Hot六重蛋白 #蛋白粉推荐  #健身 #宽肩窄腰\",\"like_cnt\":\"1\",\"share_cnt\":\"0\",\"vv\":\"364\"},{\"comment_cnt\":\"0\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1773317940\",\"item_id\":\"7616342330458557715\",\"item_publish_time\":\"1773364440\",\"item_title\":\"瘦子救星！康比特mass增肌粉！偏瘦人吃的第一桶蛋白粉！ #康比特  #运动健身  #瘦子增重\",\"like_cnt\":\"0\",\"share_cnt\":\"0\",\"vv\":\"212\"},{\"comment_cnt\":\"0\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1773144444\",\"item_id\":\"7615597315985902884\",\"item_publish_time\":\"1773195360\",\"item_title\":\"想进步更快的兄弟，碳水补充不能落下！ #健身  #运动  #康比特增肌粉  #康比特增肌粉max\",\"like_cnt\":\"0\",\"share_cnt\":\"0\",\"vv\":\"162\"},{\"comment_cnt\":\"0\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1773021258\",\"item_id\":\"7615068146654825764\",\"item_publish_time\":\"1773021258\",\"item_title\":\"新学期着急进步的真可以试试!肌酸会带你杀出重围! #健身 #肌酸 #健身补剂 #康比特肌酸 #运动\",\"like_cnt\":\"1\",\"share_cnt\":\"0\",\"vv\":\"743\"},{\"comment_cnt\":\"0\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1772794329\",\"item_id\":\"7614093625596611878\",\"item_publish_time\":\"1772934060\",\"item_title\":\"健身党别再忍难喝的蛋白粉了！这口直接戳中爽点 #乳清蛋白粉推荐 #训练怪兽蛋白粉 #训练怪兽坚持真材实料\",\"like_cnt\":\"0\",\"share_cnt\":\"0\",\"vv\":\"207\"},{\"comment_cnt\":\"0\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1772796994\",\"item_id\":\"7614105051979631918\",\"item_publish_time\":\"1772796994\",\"item_title\":\"增肌想快人一步，先把恢复做好！ #训练怪兽  #训练怪兽谷氨酰胺  #谷氨酰胺   #健身\",\"like_cnt\":\"2\",\"share_cnt\":\"2\",\"vv\":\"387\"},{\"comment_cnt\":\"0\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1772536291\",\"item_id\":\"7612985148568554771\",\"item_publish_time\":\"1772678340\",\"item_title\":\"清爽、果香、不甜腻！foyes热带水果味， 满足你对增肌粉的所有幻想！ #健身  #强烈推荐  #foyes增肌粉max  #FoYes开学季   #FoYes果力爆肌\",\"like_cnt\":\"1\",\"share_cnt\":\"0\",\"vv\":\"149\"},{\"comment_cnt\":\"10\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1772528419\",\"item_id\":\"7612951417065688326\",\"item_publish_time\":\"1772590320\",\"item_title\":\"茶味高级不廉价，FoYes 金萱乌龙真的懂口味 #FoYes力量乌龙 #foyes蛋白粉 #健身补剂 #蛋白粉  #FoYes开学季\",\"like_cnt\":\"0\",\"share_cnt\":\"0\",\"vv\":\"737\"}]",
-                "link_convert_index": "72.68",
-                "link_convert_index_by_industry": "72.6",
-                "link_i_cnt_by_industry": "2328",
-                "link_k_cnt_by_industry": "79",
-                "link_l_cnt_by_industry": "33369",
-                "link_link_cnt_by_industry": "36651",
-                "link_n_cnt_by_industry": "875",
-                "link_recommend_index_by_industry": "42.85",
-                "link_shopping_index": "53.88",
-                "link_spread_index": "49.99",
-                "link_spread_index_by_industry": "42.83",
-                "link_star_index": "56.31",
-                "link_star_index_by_industry": "52.66",
+                "last_10_items": "[{\"comment_cnt\":\"0\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1774189125\",\"item_id\":\"7620084183586721062\",\"item_publish_time\":\"1774189125\",\"item_title\":\"难怪管画师叫厨子呢 #画画 #画画教程 #邪修\",\"like_cnt\":\"128\",\"share_cnt\":\"31\",\"vv\":\"2270\"},{\"comment_cnt\":\"5\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1774100361\",\"item_id\":\"7619702983244238090\",\"item_publish_time\":\"1774100361\",\"item_title\":\"被认成AI吗？那做出的地图很权威了 #蛋仔派对 #蛋仔地图推荐 #技术 #游戏\",\"like_cnt\":\"625\",\"share_cnt\":\"83\",\"vv\":\"23868\"},{\"comment_cnt\":\"1\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1774095364\",\"item_id\":\"7619681492540738842\",\"item_publish_time\":\"1774095364\",\"item_title\":\"第五一搞起抽象来就开智了 #第五人格 #抽象 #游戏\",\"like_cnt\":\"84\",\"share_cnt\":\"19\",\"vv\":\"2550\"},{\"comment_cnt\":\"296\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1774091810\",\"item_id\":\"7619666246325374217\",\"item_publish_time\":\"1774091810\",\"item_title\":\"换代还能出圈的车，这次终于轮到中国品牌了#中国新能源汽车 #神车\",\"like_cnt\":\"1100\",\"share_cnt\":\"2\",\"vv\":\"17936\"},{\"comment_cnt\":\"6\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1774080761\",\"item_id\":\"7619618835955502374\",\"item_publish_time\":\"1774080761\",\"item_title\":\"校长在线cos武安侯 #百日誓师 #校长 #cos #万万没想到 #抽象\",\"like_cnt\":\"174\",\"share_cnt\":\"73\",\"vv\":\"9731\"},{\"comment_cnt\":\"3\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1773830643\",\"item_id\":\"7618544553963949362\",\"item_publish_time\":\"1773838800\",\"item_title\":\"车企的终极安全测试，竟然在战场上完成了#比亚迪  #伊朗  #汽车\",\"like_cnt\":\"94\",\"share_cnt\":\"31\",\"vv\":\"2959\"},{\"comment_cnt\":\"52\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1773733638\",\"item_id\":\"7618127943201541426\",\"item_publish_time\":\"1773733638\",\"item_title\":\"你是说俺的童年动画概念神兔八哥和苏翊鸣梦幻联动上了吗 #兔八哥破次元采访苏翊鸣 #乐一通  #兔八哥  #苏翊鸣  #冬奥会\",\"like_cnt\":\"1762\",\"share_cnt\":\"25\",\"vv\":\"6593\"},{\"comment_cnt\":\"37\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1773713690\",\"item_id\":\"7618042274483539246\",\"item_publish_time\":\"1773713690\",\"item_title\":\"幸福有很多种 有人请吃蓝莓是一种 诡秘~ #从酸到甜的蓝莓品种测评 #云南花香蓝莓 #多巴胺果蔬开春秀 #晒出我的多巴胺果蔬大片 #为乡村特产代言\",\"like_cnt\":\"1514\",\"share_cnt\":\"423\",\"vv\":\"55906\"},{\"comment_cnt\":\"171\",\"is_high_quality_item\":\"1\",\"item_create_time\":\"1773650735\",\"item_id\":\"7617771882640657674\",\"item_publish_time\":\"1773650735\",\"item_title\":\"男女爱豆同台互动该有的分寸感，前辈早就给出过答案 #张元英 #朴成训 #爱豆 #分寸感\",\"like_cnt\":\"16309\",\"share_cnt\":\"2878\",\"vv\":\"437448\"},{\"comment_cnt\":\"227\",\"is_high_quality_item\":\"0\",\"item_create_time\":\"1773639600\",\"item_id\":\"7617724003641347382\",\"item_publish_time\":\"1773639600\",\"item_title\":\"好嘛，新SU7这次升级诚意，我直接能给到夯#小米 #新SU7 #小米汽车\",\"like_cnt\":\"1631\",\"share_cnt\":\"61\",\"vv\":\"19042\"}]",
+                "link_convert_index": "66.65",
+                "link_convert_index_by_industry": "66.65",
+                "link_i_cnt_by_industry": "13308993",
+                "link_k_cnt_by_industry": "0",
+                "link_l_cnt_by_industry": "7215715",
+                "link_link_cnt_by_industry": "20749914",
+                "link_n_cnt_by_industry": "225206",
+                "link_recommend_index_by_industry": "69.61",
+                "link_shopping_index": "69.61",
+                "link_spread_index": "71.41",
+                "link_spread_index_by_industry": "71.41",
+                "link_star_index": "70.68",
+                "link_star_index_by_industry": "70.68",
                 "link_user_type_by_industry": "1",
                 "local_lower_threshold_author": "false",
-                "nick_name": "健身吧网",
-                "pic_expected_play_num": "106",
-                "play_over_rate_within_30d": "0.0102",
+                "nick_name": "美少娱战士",
+                "play_over_rate_within_30d": "0.3172",
+                "price_1_20": "20000",
+                "price_20_60": "20000",
+                "price_60": "22000",
+                "promotion_prospective_1_20_cpm": "277.75",
+                "promotion_prospective_20_60_cpm": "277.75",
+                "promotion_prospective_60_cpm": "305.53",
+                "promotion_prospective_vv": "72006",
+                "prospective_1_20_cpm": "300.7926",
+                "prospective_20_60_cpm": "300.7926",
+                "prospective_60_cpm": "330.8718",
                 "province": "",
-                "search_after_view_index_by_industry": "49.08",
-                "sn_expected_play_num": "422",
-                "sn_interact_rate_within_30d": "0.0049",
-                "sn_play_over_rate_within_30d": "0.0102",
+                "sn_expected_play_num": "66491",
+                "sn_interact_rate_within_30d": "0.0678",
+                "sn_play_over_rate_within_30d": "0.3172",
+                "sn_prospective_1_20_cpe": "4.7148",
+                "sn_prospective_1_20_cpm": "300.7926",
+                "sn_prospective_20_60_cpe": "4.7148",
+                "sn_prospective_20_60_cpm": "300.7926",
+                "sn_prospective_60_cpe": "5.1862",
+                "sn_prospective_60_cpm": "330.8718",
+                "star_ecom_video_num_30d": "1",
                 "star_excellent_author": "0",
-                "star_qianchuan_high_potential": "1",
-                "star_whispers_author": "1",
-                "tags_relation": "{\"运动健身\":[\"健身\"]}",
-                "vv_median_30d": "3878"
+                "star_item_count_within_30d": "1",
+                "star_qianchuan_high_potential": "0",
+                "star_whispers_author": "0",
+                "tags_relation": "{\"游戏\":[\"游戏集锦\"]}",
+                "vv_median_30d": "95419"
             },
             "extra_data": {
-                "content_query_from_word": "",
-                "content_query_score": 0,
-                "debug_info": "",
+                "content_query_from_word": "桃黑黑",
+                "content_query_score": 53.205845619939744,
+                "debug_info": "{\"最终评分\":53.205845619939744,\"相关性评分\":39.6654453507905,\"达人自定义评分\":0.001647085,\"达人自定义评分系数\":1.0011368536872496,\"达人质量评分\":71.41,\"达人质量评分系数\":1.3398419348437687}",
                 "demander_behavior": {
                     "added_author_list": false,
                     "cooperated": false,
                     "viewd_author_page": false
                 },
                 "recall_from": [
-                    "1_0"
+                    "9_0",
+                    "10_0"
                 ],
                 "recall_return_infos": {},
                 "recommend_types": []
             },
             "items": [
                 {
-                    "item_id": "7564370247017336104",
-                    "video_tag": 3,
-                    "vv": 802199
+                    "debug_info": "{\"ES评分\":157.16733,\"itemId\":\"7599899138150386970\",\"viking评分\":0.6010702848434448,\"是否星图视频系数\":1,\"线性化ES评分\":64.08927029985595,\"视频新鲜度系数\":1,\"视频最终评分\":53.92551865536656,\"视频相关性评分\":62.49637357365136,\"视频质量系数\":0.8628583639627644,\"视频质量评分\":20}",
+                    "item_id": "7599899138150386970",
+                    "products": [],
+                    "score": 53.92551865536656,
+                    "video_tag": 1
                 },
                 {
-                    "item_id": "7566525406417833262",
-                    "video_tag": 3,
-                    "vv": 182552
-                },
-                {
-                    "item_id": "7595111756758830388",
-                    "video_tag": 5,
-                    "vv": 15933
-                },
-                {
-                    "item_id": "7571391957851835690",
-                    "video_tag": 5,
-                    "vv": 13896
-                },
-                {
-                    "item_id": "7618107139202075954",
-                    "video_tag": 6,
-                    "vv": 86
-                },
-                {
-                    "item_id": "7618102796956585256",
-                    "video_tag": 6,
-                    "vv": 101
+                    "debug_info": "{\"ES评分\":103.499084,\"itemId\":\"7589596516684270858\",\"viking评分\":0.5274586081504822,\"是否星图视频系数\":1,\"线性化ES评分\":42.20457756878289,\"视频新鲜度系数\":1,\"视频最终评分\":50.81074409242888,\"视频相关性评分\":46.421090867289024,\"视频质量系数\":1.0945616129032645,\"视频质量评分\":53.333333333333336}",
+                    "item_id": "7589596516684270858",
+                    "products": [],
+                    "score": 50.81074409242888,
+                    "video_tag": 1
                 }
             ],
-            "star_id": "6629656325343150084",
-            "task_infos": []
+            "star_id": "7506103213171408907",
+            "task_infos": [
+                {
+                    "online_status": 1,
+                    "platform_source": 1,
+                    "price_infos": [
+                        {
+                            "end_time": "2145916800",
+                            "platform_source": 1,
+                            "price": 20000,
+                            "price_extra_info": {},
+                            "start_time": "1751299200",
+                            "task_category": 1,
+                            "video_type": 2,
+                            "video_type_status": 1
+                        },
+                        {
+                            "end_time": "2145916800",
+                            "platform_source": 1,
+                            "price": 20000,
+                            "price_extra_info": {},
+                            "start_time": "1751299200",
+                            "task_category": 1,
+                            "video_type": 1,
+                            "video_type_status": 1
+                        },
+                        {
+                            "end_time": "2145916800",
+                            "platform_source": 1,
+                            "price": 22000,
+                            "price_extra_info": {},
+                            "start_time": "1751299200",
+                            "task_category": 1,
+                            "video_type": 71,
+                            "video_type_status": 1
+                        }
+                    ],
+                    "task_category": 1,
+                    "task_status": 1
+                }
+            ]
         }
     ],
     "base_resp": {
@@ -363,17 +393,25 @@
         "status_message": ""
     },
     "extra_data": {
-        "intent_score": 0.8130385279655457,
+        "intent_score": 0.9999816417694092,
         "is_cpm_project_search": false,
-        "is_intent_consistent": true,
-        "search_author_count": 0,
-        "search_item_count": 0,
-        "search_session_id": "7618788022426894346"
+        "is_intent_consistent": false,
+        "search_author_count": 283,
+        "search_item_count": 371,
+        "search_session_id": "7620285103751151666",
+        "top_author_content_labels": [
+            {
+                "生活": "生活记录"
+            },
+            {
+                "影视娱乐": "明星资讯"
+            }
+        ]
     },
     "pagination": {
         "has_more": true,
         "limit": 20,
         "page": 1,
-        "total_count": 5032
+        "total_count": 283
     }
 }
