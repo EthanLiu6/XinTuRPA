@@ -1,0 +1,35 @@
+{
+    "scene_param": {
+        "platform_source": 1,
+        "search_scene": 1,
+        "display_scene": 1,
+        "task_category": 1,
+        "marketing_target": 1,
+        "first_industry_id": 0
+    },
+    "page_param": {
+        "page": "2",
+        "limit": "20"
+    },
+    "sort_param": {
+        "sort_field": {
+            "field_name": "score"
+        },
+        "sort_type": 2
+    },
+    "attribute_filter": [
+        {
+            "field": {
+                "field_name": "price_by_video_type__ge",
+                "rel_id": "2"
+            },
+            "field_value": "0"
+        }
+    ],
+    "search_param": {
+        "seach_type": 3,
+        "keyword": "桃黑黑",
+        "time_range_days": 180,
+        "is_new_content_query": true
+    }
+}

@@ -3,7 +3,6 @@ node_modules/
 .user-data_fallback/
 output/
 imgs/
-docs/*.png
 *.log
 .DS_Store
 nul

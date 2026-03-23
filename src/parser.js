@@ -1,10 +1,19 @@
 export function parseAuthors(jsonResponses, keyword = '') {
   const authors = [];
+  const seenIds = new Set();
+  
   for (const response of jsonResponses) {
     if (!response || !Array.isArray(response.authors)) continue;
     for (const author of response.authors) {
       const parsed = parseAuthor(author, keyword);
-      if (parsed) authors.push(parsed);
+      if (parsed && parsed.id) {
+        if (!seenIds.has(parsed.id)) {
+          seenIds.add(parsed.id);
+          authors.push(parsed);
+        }
+      } else if (parsed) {
+        authors.push(parsed);
+      }
     }
   }
   return authors;
@@ -20,7 +29,7 @@ export function parseAuthor(author, keyword = '') {
 
     // 基本信息
     nick_name: attrs.nick_name || "",
-    id: attrs.id || author.star_id || "",
+    id: attrs.id || author.star_id || attrs.core_user_id || "",
     star_id: author.star_id || attrs.id || "",
     core_user_id: attrs.core_user_id || "",
     avatar_uri: attrs.avatar_uri || "",
