@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>星图达人RPA系统</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>星图达人RPA系统</h1>
+      <p class="subtitle">自动化抓取抖音星图平台达人数据</p>
+    </header>
+
+    <main class="main-content">
+      <div class="left-panel">
+        <section class="card">
+          <h2>登录控制</h2>
+          <div class="status-bar">
+            <span class="status-label">状态:</span>
+            <span id="loginStatus" class="status-value status-idle">未启动</span>
+          </div>
+          <div class="button-group">
+            <button id="btnStartBrowser" class="btn btn-primary">启动浏览器</button>
+            <button id="btnCheckLogin" class="btn btn-secondary" disabled>检查登录</button>
+            <button id="btnConfirmLogin" class="btn btn-success" disabled>确认登录</button>
+            <button id="btnCloseBrowser" class="btn btn-danger" disabled>关闭浏览器</button>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>关键词配置</h2>
+          <div class="keyword-input">
+            <input type="text" id="keywordInput" placeholder="输入关键词，如：健身">
+            <input type="number" id="pagesInput" value="3" min="1" max="10" placeholder="页数">
+            <button id="btnAddKeyword" class="btn btn-small">添加</button>
+          </div>
+          <div id="keywordList" class="keyword-list"></div>
+        </section>
+
+        <section class="card">
+          <h2>快捷关键词</h2>
+          <div class="quick-keywords">
+            <button class="btn btn-outline btn-small" data-keyword="健身">健身</button>
+            <button class="btn btn-outline btn-small" data-keyword="美食">美食</button>
+            <button class="btn btn-outline btn-small" data-keyword="美妆">美妆</button>
+            <button class="btn btn-outline btn-small" data-keyword="母婴">母婴</button>
+            <button class="btn btn-outline btn-small" data-keyword="数码">数码</button>
+            <button class="btn btn-outline btn-small" data-keyword="旅游">旅游</button>
+            <button class="btn btn-outline btn-small" data-keyword="教育">教育</button>
+            <button class="btn btn-outline btn-small" data-keyword="家居">家居</button>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>执行控制</h2>
+          <div class="progress-container" id="progressContainer" style="display: none;">
+            <div class="progress-bar">
+              <div id="progressBar" class="progress-fill" style="width: 0%"></div>
+            </div>
+            <span id="progressText" class="progress-text">0%</span>
+          </div>
+          <p id="taskInfo" class="task-info"></p>
+          <div class="button-group">
+            <button id="btnStartCrawl" class="btn btn-primary btn-large" disabled>开始抓取</button>
+          </div>
+        </section>
+      </div>
+
+      <div class="right-panel">
+        <section class="card card-dashboard">
+          <h2>数据看板</h2>
+          <div class="dashboard">
+            <div class="stat-card">
+              <div class="stat-value" id="statTotal">0</div>
+              <div class="stat-label">总达人</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="statKeywords">0</div>
+              <div class="stat-label">关键词数</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="statWithPrice">0</div>
+              <div class="stat-label">有报价</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="statWithShop">0</div>
+              <div class="stat-label">有橱窗</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card card-results">
+          <h2>关键词结果</h2>
+          <div id="resultsList" class="results-list">
+            <p class="empty-message">暂无数据</p>
+          </div>
+        </section>
+
+        <section class="card card-table">
+          <h2>达人列表</h2>
+          <div class="table-toolbar">
+            <input type="text" id="searchTable" placeholder="搜索昵称、ID...">
+            <select id="sortField">
+              <option value="follower">按粉丝数</option>
+              <option value="star_index">按星图指数</option>
+              <option value="interaction_rate">按互动率</option>
+            </select>
+          </div>
+          <div class="table-container">
+            <table id="authorTable">
+              <thead>
+                <tr>
+                  <th>昵称</th>
+                  <th>ID</th>
+                  <th>粉丝数</th>
+                  <th>认证</th>
+                  <th>1-20秒</th>
+                  <th>20-60秒</th>
+                  <th>60秒+</th>
+                  <th>星图指数</th>
+                </tr>
+              </thead>
+              <tbody id="authorTableBody">
+                <tr><td colspan="8" class="empty-message">暂无数据</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="card card-files">
+          <h2>导出文件</h2>
+          <div id="fileList" class="file-list">
+            <p class="empty-message">暂无文件</p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

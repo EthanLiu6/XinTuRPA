@@ -1,0 +1,20 @@
+{
+  "browser": "msedge",
+  "headless": false,
+  "loginUrl": "https://sso.oceanengine.com/xingtu/login?role=1",
+  "marketUrl": "https://www.xingtu.cn/ad/creator/market",
+  "loginTimeoutMs": 120000,
+  "searchMode": "keyword",
+  "keyword": "",
+  "authorId": "",
+  "maxPages": 3,
+  "slowMoMs": 0,
+  "outputDir": "./output",
+  "screenshotDir": "./output/screenshots",
+  "requireConfirmAfterLogin": false,
+  "keepBrowserOpen": true,
+  "keepBrowserOpenMs": 5000,
+  "requestDelayMs": 2000,
+  "pageLoadTimeoutMs": 30000,
+  "searchTimeoutMs": 30000
+}

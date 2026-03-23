@@ -1,0 +1,38 @@
+{
+  "keywords": [
+    {
+      "keyword": "健身",
+      "enabled": true,
+      "maxPages": 3,
+      "remark": "健身行业达人"
+    },
+    {
+      "keyword": "美食",
+      "enabled": true,
+      "maxPages": 2,
+      "remark": "美食博主"
+    },
+    {
+      "keyword": "美妆",
+      "enabled": false,
+      "maxPages": 2,
+      "remark": "美妆达人"
+    },
+    {
+      "keyword": "母婴",
+      "enabled": false,
+      "maxPages": 2,
+      "remark": "母婴育儿"
+    },
+    {
+      "keyword": "数码",
+      "enabled": false,
+      "maxPages": 2,
+      "remark": "数码科技"
+    }
+  ],
+  "global": {
+    "delayBetweenKeywords": 3000,
+    "saveScreenshotPerKeyword": false
+  }
+}

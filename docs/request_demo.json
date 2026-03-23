@@ -1,0 +1,26 @@
+// 前端f12拿到的请求负载示例
+{
+    "scene_param": {
+        "platform_source": 1,
+        "search_scene": 1,
+        "display_scene": 1,
+        "task_category": 1,
+        "marketing_target": 1,
+        "first_industry_id": 0
+    },
+    "page_param": {
+        "page": "1",
+        "limit": "20"
+    },
+    "sort_param": {
+        "sort_field": {
+            "field_name": "score"
+        },
+        "sort_type": 2
+    },
+    "search_param": {
+        "seach_type": 2,
+        "keyword": "桃黑黑",
+        "is_new_nickname_query": true
+    }
+}
