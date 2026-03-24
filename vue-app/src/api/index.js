@@ -35,3 +35,23 @@ export async function getFiles() {
 export async function getAuthors() {
   return fetch(`${API}/authors`).then(r => r.json())
 }
+
+export async function setKeywords(keywords) {
+  return fetch(`${API}/set-keywords`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ keywords })
+  }).then(r => r.json())
+}
+
+export async function getKeywords() {
+  return fetch(`${API}/get-keywords`).then(r => r.json())
+}
+
+export async function startFromAgent(keywords, autoLaunch = true) {
+  return fetch(`${API}/start-from-agent`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ keywords, autoLaunch })
+  }).then(r => r.json())
+}

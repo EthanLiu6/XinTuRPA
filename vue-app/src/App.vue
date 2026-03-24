@@ -55,7 +55,9 @@
           </div>
           <div class="keyword-input-group">
             <input v-model="keywordInput" placeholder="输入关键词" @keyup.enter="addKeyword" class="keyword-input" />
+            <input v-model.number="pagesInput" type="number" min="1" max="50" class="keyword-pages-input" placeholder="页数" />
             <button class="btn btn-primary" @click="addKeyword">添加</button>
+            <button class="btn btn-outline" @click="loadExternalKeywords" title="加载外部关键词">加载关键词</button>
           </div>
           <div class="quick-tags">
             <span class="quick-label">快捷添加:</span>
@@ -68,6 +70,23 @@
                 <span class="kw-params">{{ kw.maxPages }}页</span>
               </div>
               <button class="kw-remove" @click="removeKeyword(i)">×</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel glow-border gradient-panel">
+          <div class="panel-header">
+            <span class="panel-title">Agent 接入</span>
+          </div>
+          <div class="agent-section">
+            <div class="agent-input-group">
+              <input v-model="agentKeywordsInput" placeholder="粘贴需求解析的关键词 JSON" class="agent-input" />
+            </div>
+            <div class="agent-buttons">
+              <button class="btn btn-outline" @click="parseAgentKeywords">解析关键词</button>
+              <button class="btn btn-primary btn-glow" @click="startFromAgent" :disabled="status !== 'idle'">
+                <span class="btn-icon">🚀</span>启动
+              </button>
             </div>
           </div>
         </section>
@@ -279,6 +298,7 @@ const pagesInput = ref(3)
 const searchQuery = ref('')
 const sortField = ref('follower')
 const selectedKeyword = ref('')
+const agentKeywordsInput = ref('')
 
 const quickKeywords = ['健身', '美食', '美妆', '母婴', '数码', '旅游', '教育', '家居']
 
@@ -332,21 +352,26 @@ const hasResults = computed(() => allAuthors.value.length > 0)
 const authorCount = computed(() => allAuthors.value.length)
 
 const filteredAuthors = computed(() => {
-  let list = allAuthors.value
+  let authors = []
   
   if (selectedKeyword.value) {
-    list = list.filter(a => a.keyword === selectedKeyword.value)
+    const selected = results.value.find(r => r.keyword === selectedKeyword.value)
+    if (selected && selected.authors) {
+      authors = [...selected.authors]
+    }
+  } else {
+    authors = results.value.filter(r => r.success).flatMap(r => r.authors || [])
   }
   
   if (searchQuery.value) {
     const q = searchQuery.value.toLowerCase()
-    list = list.filter(a => 
+    authors = authors.filter(a => 
       (a.nick_name && a.nick_name.toLowerCase().includes(q)) || 
       (a.id && a.id.includes(q))
     )
   }
   
-  return list.sort((a, b) => {
+  return authors.sort((a, b) => {
     if (sortField.value === 'follower') return (b.follower || 0) - (a.follower || 0)
     if (sortField.value === 'star_index') return (parseFloat(b.star_index) || 0) - (parseFloat(a.star_index) || 0)
     if (sortField.value === 'interaction_rate') return (b.interaction_rate || 0) - (a.interaction_rate || 0)
@@ -394,6 +419,58 @@ function addQuickKeyword(q) {
 
 function removeKeyword(i) { keywords.value.splice(i, 1) }
 
+function parseAgentKeywords() {
+  try {
+    const parsed = JSON.parse(agentKeywordsInput.value)
+    if (Array.isArray(parsed.keywords)) {
+      keywords.value = parsed.keywords.map(k => ({
+        keyword: k.keyword || k,
+        maxPages: k.maxPages || k.pages || 3
+      }))
+      alert(`解析成功: ${keywords.value.length} 个关键词`)
+    } else if (Array.isArray(parsed)) {
+      keywords.value = parsed.map(k => ({
+        keyword: k.keyword || k,
+        maxPages: k.maxPages || 3
+      }))
+      alert(`解析成功: ${keywords.value.length} 个关键词`)
+    } else {
+      alert('格式错误，请检查JSON')
+    }
+  } catch (e) {
+    alert('JSON解析失败: ' + e.message)
+  }
+}
+
+async function startFromAgent() {
+  if (keywords.value.length === 0) {
+    alert('请先添加关键词（手动或解析Agent数据）')
+    return
+  }
+  const res = await api.startFromAgent(keywords.value, true)
+  if (res.success) {
+    status.value = res.status
+    currentTask.value = '等待登录，请完成登录后确认'
+    startPoll()
+  } else {
+    alert('启动失败: ' + res.error)
+  }
+}
+
+async function loadExternalKeywords() {
+  try {
+    const res = await api.getKeywords()
+    if (res.success && res.keywords && res.keywords.length > 0) {
+      keywords.value = res.keywords.map(k => ({ keyword: k.keyword, maxPages: pagesInput.value || 3 }))
+      alert(`已加载 ${res.keywords.length} 个外部关键词（每关键词 ${pagesInput.value} 页）`)
+    } else {
+      alert('暂无外部关键词')
+    }
+  } catch (e) {
+    alert('加载关键词失败: ' + e.message)
+  }
+}
+
 async function handleStartBrowser() {
   const res = await api.startBrowser()
   if (res.success) { status.value = 'waiting_login'; currentTask.value = '等待登录...'; startPoll() }
@@ -434,6 +511,9 @@ function startPoll() {
     loginStatus.value = res.loginStatus || 'not_logged_in'
     currentTask.value = res.currentTask || ''
     progress.value = res.progress || 0
+    if (res.currentSearch?.keywords?.length > 0 && keywords.value.length === 0) {
+      keywords.value = res.currentSearch.keywords.map(k => ({ keyword: k.keyword, maxPages: k.maxPages || 3 }))
+    }
   }, 1000)
 }
 
@@ -495,7 +575,7 @@ body {
 .main-layout { display: flex; flex: 1; overflow: hidden; }
 
 .left-panel { 
-  width: 340px; 
+  width: 420px; 
   flex-shrink: 0; 
   background: linear-gradient(180deg, var(--bg-card) 0%, rgba(30,41,59,0.8) 100%);
   border-right: 1px solid var(--border-color); 
@@ -597,6 +677,22 @@ body {
 .progress-fill { height: 100%; background: var(--gradient-primary); transition: width 0.3s; border-radius: 3px; }
 .progress-info { text-align: center; font-size: 12px; color: var(--text-muted); margin-top: 6px; }
 
+.agent-section { display: flex; flex-direction: column; gap: 10px; }
+.agent-input-group { display: flex; gap: 8px; }
+.agent-input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 12px;
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: monospace;
+}
+.agent-input:focus { outline: none; border-color: var(--primary); }
+.agent-buttons { display: flex; gap: 8px; }
+.agent-buttons .btn { flex: 1; }
+
 .param-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .param-item { display: flex; flex-direction: column; gap: 6px; }
 .param-label { font-size: 12px; color: var(--text-muted); }
@@ -624,6 +720,17 @@ body {
   color: var(--text-primary);
 }
 .keyword-input:focus { outline: none; border-color: var(--primary); }
+.keyword-pages-input {
+  width: 70px;
+  padding: 10px 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 13px;
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  text-align: center;
+}
+.keyword-pages-input:focus { outline: none; border-color: var(--primary); }
 
 .quick-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; align-items: center; }
 .quick-label { font-size: 11px; color: var(--text-muted); margin-right: 4px; }
