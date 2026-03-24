@@ -1,0 +1,6 @@
+{
+  "apiKey": "4413064473894e03936307eaf635d88f.Jh0uyiEIg8JjE3Zx",
+  "baseURL": "https://open.bigmodel.cn/api/paas/v4",
+  "model": "glm-4.5-flash",
+  "port": 3001
+}

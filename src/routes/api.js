@@ -364,6 +364,121 @@ router.post("/close-browser", async (req, res) => {
   }
 });
 
+router.post("/set-keywords", (req, res) => {
+  const { keywords } = req.body;
+  if (!keywords || !Array.isArray(keywords)) {
+    return res.status(400).json({ success: false, error: "请提供关键词数组" });
+  }
+
+  const validKeywords = keywords
+    .filter(k => k && k.keyword && typeof k.keyword === "string")
+    .map(k => ({
+      keyword: k.keyword.trim(),
+      maxPages: k.maxPages || 3
+    }));
+
+  if (validKeywords.length === 0) {
+    return res.status(400).json({ success: false, error: "没有有效的关键词" });
+  }
+
+  currentSearch.keywords = validKeywords;
+  console.log(`[关键词] 加载 ${validKeywords.length} 个: ${validKeywords.map(k => k.keyword).join(", ")}`);
+
+  res.json({
+    success: true,
+    message: `已加载 ${validKeywords.length} 个关键词`,
+    keywords: validKeywords
+  });
+});
+
+router.get("/get-keywords", (req, res) => {
+  res.json({
+    success: true,
+    keywords: currentSearch.keywords
+  });
+});
+
+router.post("/start-from-agent", async (req, res) => {
+  const { keywords, autoLaunch = true } = req.body;
+
+  if (!keywords || !Array.isArray(keywords) || keywords.length === 0) {
+    return res.status(400).json({ success: false, error: "请提供关键词数组" });
+  }
+
+  const validKeywords = keywords
+    .filter(k => k && k.keyword && typeof k.keyword === "string")
+    .map(k => ({
+      keyword: k.keyword.trim(),
+      maxPages: k.maxPages || 3
+    }));
+
+  if (validKeywords.length === 0) {
+    return res.status(400).json({ success: false, error: "没有有效的关键词" });
+  }
+
+  console.log(`\n${"=".repeat(50)}`);
+  console.log(`[Agent请求] 接收 ${validKeywords.length} 个关键词`);
+  console.log(`  关键词: ${validKeywords.map(k => k.keyword).join(", ")}`);
+  console.log(`  自动启动: ${autoLaunch}`);
+  console.log("=".repeat(50) + "\n");
+
+  currentSearch.keywords = validKeywords;
+
+  if (autoLaunch) {
+    if (browserContext) {
+      await browserContext.close();
+    }
+
+    try {
+      const cfg = loadConfig();
+      const userDataDir = path.resolve(process.cwd(), ".user-data");
+      if (!fs.existsSync(userDataDir)) {
+        fs.mkdirSync(userDataDir, { recursive: true });
+      }
+
+      browserContext = await chromium.launchPersistentContext(userDataDir, {
+        channel: cfg.browser,
+        headless: false,
+        slowMo: cfg.slowMoMs,
+        viewport: { width: 1400, height: 900 }
+      });
+
+      browserPage = browserContext.pages()[0];
+
+      await browserPage.goto(cfg.loginUrl, { waitUntil: "domcontentloaded" });
+
+      rpaState = {
+        status: "waiting_login",
+        loginStatus: "not_logged_in",
+        currentTask: "等待Agent需求加载，请在浏览器中完成登录",
+        progress: 0,
+        error: null
+      };
+
+      checkLoginStatus();
+
+      res.json({
+        success: true,
+        message: "浏览器已启动，请在浏览器中完成登录后确认",
+        status: "waiting_login",
+        keywords: validKeywords,
+        nextStep: "POST /api/confirm-login"
+      });
+
+    } catch (e) {
+      rpaState.error = e.message;
+      res.status(500).json({ success: false, error: e.message });
+    }
+  } else {
+    res.json({
+      success: true,
+      message: "关键词已加载，请手动启动浏览器",
+      status: rpaState.status,
+      keywords: validKeywords
+    });
+  }
+});
+
 router.get("/authors", (req, res) => {
   res.json({
     success: true,
